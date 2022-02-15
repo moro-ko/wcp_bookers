@@ -1,15 +1,27 @@
 class UsersController < ApplicationController
   def index
-    @book = Book.new
+    @new_book = Book.new
+    @users = User.all
   end
 
   def show
-    @book = Book.new
+    @new_book = Book.new
+    @user = User.find(params[:id])
+    # アソシエーションを持っているモデル同士の記述方法(15章)
+    # 特定のユーザー(@user)に関連づけられた投稿全て(books)を取得し、@booksに渡す という処理
+    @books = @user.books
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to user_path(@user.id)
+  end
 
   private
 

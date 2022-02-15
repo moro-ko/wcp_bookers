@@ -8,10 +8,11 @@ Rails.application.routes.draw do
   get "home/about" => "homes#about", as: "about"
 
   # booksコントローラー
-  resources :books, only: [:index, :create, :show, :edit]
+  resources :books, only: [:index, :create, :show, :edit, :update, :destroy]
 
   # usersコントローラー
-  resources :users, only: [:index, :show, :edit]
+  resources :users, only: [:index, :show, :edit, :update]
+
 
 
 
