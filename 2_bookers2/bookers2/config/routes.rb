@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # homesコントローラー
   root :to => 'homes#top'
-  get "home/about" => "homes#about", as: "about"
+  get "/home/about" => "homes#about", as: "about"
 
   # booksコントローラー
   resources :books, only: [:index, :create, :show, :edit, :update, :destroy]
