@@ -3,6 +3,11 @@
 
       <h2>User info</h2>
       <!--画像を入れる-->
+      <% if user.profile_image.attached? %>
+        <%= image_tag user.profile_image, size: "100x100" %>
+      <% else %>
+        <%= image_tag 'no_image', size: "100x100" %>
+      <% end %>
 
       <table class = "table" >
         <tbody>
@@ -17,7 +22,9 @@
         </tbody>
       </table>
       <div class = "row" >
-        <a class = "btn btn-outline-secondary btn-block fas fa-user-cog" ></a>
+        <%= link_to edit_user_path(current_user.id) do %>
+          <a class = "btn btn-outline-secondary btn-block fas fa-user-cog" ></a>
+        <% end %>
       </div>
 
 
