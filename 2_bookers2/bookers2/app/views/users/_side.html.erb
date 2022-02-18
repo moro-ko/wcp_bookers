@@ -21,10 +21,12 @@
           </tr>
         </tbody>
       </table>
-      <div class = "row" >
-        <%= link_to edit_user_path(current_user.id) do %>
-          <a class = "btn btn-outline-secondary btn-block fas fa-user-cog" ></a>
-        <% end %>
+      <div>
+          <%= link_to edit_user_path(user.id) do %>
+            <p class = "btn btn-outline-secondary btn-block mx-auto">
+              <i class = "fas fa-user-cog"></i>
+            </p>
+          <% end %>
       </div>
 
 

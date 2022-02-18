@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   # サインイン(ログイン)後の遷移先:users#showに設定(user_path)
   def after_sign_in_path_for(resource)
-    user_path(current_user.id)
+    current_user
   end
 
   # サインアウト(ログアウト)後の遷移先:ルートパスのため設定不要
